@@ -1,5 +1,9 @@
 def max_num(nums):
-    return max(nums)
+    max = nums[0]
+    for i in nums:
+        if i > max:
+            max = i
+    return max
 
 def mult_list(nums):
     product = 1
@@ -8,14 +12,15 @@ def mult_list(nums):
     return product
 
 def rev_string(str):
-    opp_string = str[::-1]
-    return opp_string
+    opp_string = ''
+    str_as_list = [char for char in str] 
+    reversed_list = []
+    for i in str_as_list:
+        reversed_list.insert(0,i)
+    return opp_string.join(reversed_list)
 
-def num_within(num1, num2, num3):
-    if num1 >= num2 and num1 <= num3:
-        return True
-    else:
-        return False
+def num_within(input, min, max):
+    return input >= min and input <= max
 
 def pascal(n):
     triangle = [[1], [1,1]]
